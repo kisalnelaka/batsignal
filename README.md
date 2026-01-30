@@ -5,6 +5,13 @@ A KDE Plasma widget that monitors and displays battery levels for connected Blue
 ![Widget Icon](https://img.shields.io/badge/KDE-Plasma-blue?logo=kde)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
+> [!WARNING]
+> **Experimental C++ Plugin Required**: This widget now uses a C++ plugin for DBus communication (replacing the deprecated QtDBus QML module in Plasma 6).
+> You must build and install the plugin manually before the widget will work. See the [Installation](#installation) section.
+
+> [!CAUTION]
+> **BlueZ Experimental Features**: This widget requires BlueZ experimental features (`bluez` flag `-E`) to read battery levels. Enabling this may affect Bluetooth stability on some systems.
+
 ## Features
 
 - 📊 **Real-time Battery Monitoring**: Track battery levels of all connected Bluetooth devices

@@ -130,11 +130,13 @@ PlasmoidItem {
     
     // Compact representation (panel icon)
     compactRepresentation: Item {
+        implicitWidth: Kirigami.Units.iconSizes.smallMedium
+        implicitHeight: Kirigami.Units.iconSizes.smallMedium
+        
         Kirigami.Icon {
             id: compactIcon
             anchors.fill: parent
             source: getBatteryIcon()
-            isMask: true
             
             // Badge showing number of devices
             PlasmaComponents3.Label {
