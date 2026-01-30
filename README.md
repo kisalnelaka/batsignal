@@ -27,6 +27,7 @@ A KDE Plasma widget that monitors and displays battery levels for connected Blue
 The widget shows a battery icon in your panel with a badge indicating the number of devices being monitored.
 
 ### Expanded View (Full)
+![Expanded View](screenshots/expanded_view.png)
 Click the panel icon to see a detailed list of all Bluetooth devices with their battery levels, connection status, and device information.
 
 ## Requirements
