@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "",
+                "Name": "BatSignal Developer"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Monitor battery levels of connected Bluetooth devices",
+        "Icon": "battery-060",
+        "Id": "org.kde.plasma.batsignal",
+        "License": "GPL-3.0+",
+        "Name": "BatSignal",
+        "Version": "1.0.0",
+        "Website": ""
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
