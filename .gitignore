@@ -1,0 +1,33 @@
+# CMake
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+install_manifest.txt
+compile_commands.json
+.ninja_log
+.ninja_deps
+
+# Qt/QMake
+*.pro.user
+*.pro.user.*
+moc_*
+qrc_*
+ui_*
+*.qmlc
+*.jsc
+*.o
+*.so
+*.a
+*.lib
+
+# KDE/Plasma
+.directory
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~

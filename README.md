@@ -65,21 +65,20 @@ Run the installation script:
 ./install.sh
 ```
 
-The script will automatically detect your Plasma version and install the widget using the appropriate `kpackagetool`.
+Or manually using CMake (standard KDE method):
 
-### Manual Installation
-
-If the script doesn't work, you can install manually:
-
-**For Plasma 6:**
 ```bash
-kpackagetool6 --type=Plasma/Applet --install package
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+make
+sudo make install
 ```
 
-**For Plasma 5:**
-```bash
-kpackagetool5 --type=Plasma/Applet --install package
-```
+### Build Requirements
+- CMake
+- Extra CMake Modules (ECM)
+- Qt 6 (Core, Qml, DBus)
+- KDE Frameworks 6
 
 ## Usage
 

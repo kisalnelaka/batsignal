@@ -1,33 +1,34 @@
 #!/bin/bash
 
-# Complete installation script for BatSignal widget
+# BatSignal Widget Installation Script using CMake
 
 set -e
 
 echo "========================================="
-echo "BatSignal Widget - Complete Installation"
+echo "BatSignal Widget - Installation"
 echo "========================================="
 echo ""
 
-# Step 1: Build and install C++ plugin
-echo "Step 1: Building C++ plugin..."
-cd plugin
-qmake6 batsignalplugin.pro
-make -j$(nproc)
+# Check for CMake
+if ! command -v cmake &> /dev/null; then
+    echo "Error: cmake is required but not installed."
+    echo "Please install 'cmake' and 'extra-cmake-modules'."
+    exit 1
+fi
+
+# Build and Install
+echo "Step 1: Configuring..."
+cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr
 
 echo ""
-echo "Step 2: Installing C++ plugin (requires sudo)..."
-sudo make install
+echo "Step 2: Building..."
+cmake --build build -j$(nproc)
 
-cd ..
-
-# Step 2: Install widget
 echo ""
-echo "Step 3: Installing widget package..."
-kpackagetool6 --type=Plasma/Applet --upgrade package 2>/dev/null || \
-    kpackagetool6 --type=Plasma/Applet --install package
+echo "Step 3: Installing (requires sudo)..."
+sudo cmake --install build
 
-# Step 3: Restart plasmashell
+# Restart Plasma
 echo ""
 echo "Step 4: Restarting plasmashell..."
 echo "Clearing cache..."
@@ -47,6 +48,3 @@ echo "1. Right-click on your panel"
 echo "2. Select 'Add Widgets...'"
 echo "3. Search for 'BatSignal'"
 echo "4. Drag it to your panel"
-echo ""
-echo "Note: Make sure BlueZ experimental features are enabled:"
-echo "  sudo ./enable-bluez-experimental.sh enable"
